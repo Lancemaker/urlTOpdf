@@ -1,8 +1,0 @@
-import re
-
-f = open('sitemap.xml','r')
-res = f.readlines()
-for d in res:
-    data = re.findall('>(http:\/\/.+)<',d)
-    for i in data:
-        print i

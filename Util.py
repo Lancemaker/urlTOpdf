@@ -2,7 +2,7 @@ import os
 import time
 
 from PIL import Image
-
+#credito : https://stackoverflow.com/questions/41721734/take-screenshot-of-full-page-with-selenium-python-with-chromedriver
 def fullpage_screenshot(driver, file):
 
         print("Starting chrome full page screenshot workaround ...")
