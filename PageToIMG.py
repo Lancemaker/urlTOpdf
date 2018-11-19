@@ -31,6 +31,7 @@ for d in res:
         data.append(re.findall('<loc>(http:\/\/.+)<\/loc>',d))
 
 #print(data,str(len(data)))
+'''
 loop = asyncio.get_event_loop()
 for i in data:    
     if i:
@@ -41,4 +42,17 @@ for i in data:
         print(datetime.datetime.now())
         q+=1
 loop.close()
-
+'''
+#paginas especificas:
+specifics = [46,208,228,345,369,372,373,523,538,548,565,566,569,580,590,619,623,642,647,662,690]
+loop = asyncio.get_event_loop()
+for i in data:
+    if i:
+        if q in specifics:
+                url=i[0]
+                out=path+("%04d" % (q,))+".png"    
+                print(datetime.datetime.now(),url,out)        
+                loop.run_until_complete(printPages(url,out))        
+                print(datetime.datetime.now())
+        q+=1
+loop.close()
